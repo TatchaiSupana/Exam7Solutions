@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:lotteryplus": "npx playwright test  ./lotteryplus/tests --project Chrome --config=./lotteryplus/playwright.config.ts --ui --headed"
+    "test:lotteryplus": "npx playwright test  ./lotteryplus/tests --project Chrome --config=./lotteryplus/playwright.config.ts --headed"
   },
   "keywords": [],
   "author": "",
