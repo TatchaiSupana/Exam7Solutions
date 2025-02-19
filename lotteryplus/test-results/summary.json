@@ -1,9 +1,9 @@
 {
   "config": {
-    "configFile": "C:\\Users\\ZENO\\Documents\\Playwright exam\\shopee\\playwright.config.ts",
-    "rootDir": "C:/Users/ZENO/Documents/Playwright exam/shopee",
+    "configFile": "C:\\Users\\ZENO\\Documents\\Playwright_7Solutions\\lotteryplus\\playwright.config.ts",
+    "rootDir": "C:/Users/ZENO/Documents/Playwright_7Solutions/lotteryplus/tests",
     "forbidOnly": false,
-    "fullyParallel": false,
+    "fullyParallel": true,
     "globalSetup": null,
     "globalTeardown": null,
     "globalTimeout": 0,
@@ -28,7 +28,7 @@
       [
         "junit",
         {
-          "outputFile": "test-results/e2e-results.xml"
+          "outputFile": "test-results/lotterplus-results.xml"
         }
       ],
       [
@@ -45,107 +45,82 @@
     "quiet": false,
     "projects": [
       {
-        "outputDir": "C:/Users/ZENO/Documents/Playwright exam/test-results",
+        "outputDir": "C:/Users/ZENO/Documents/Playwright_7Solutions/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {},
         "id": "Chrome",
         "name": "Chrome",
-        "testDir": "C:/Users/ZENO/Documents/Playwright exam/shopee",
+        "testDir": "C:/Users/ZENO/Documents/Playwright_7Solutions/lotteryplus/tests",
         "testIgnore": [],
         "testMatch": [
           "**/*.spec.ts"
         ],
-        "timeout": 180000
-      },
-      {
-        "outputDir": "C:/Users/ZENO/Documents/Playwright exam/test-results",
-        "repeatEach": 1,
-        "retries": 0,
-        "metadata": {},
-        "id": "Mobile",
-        "name": "Mobile",
-        "testDir": "C:/Users/ZENO/Documents/Playwright exam/shopee",
-        "testIgnore": [],
-        "testMatch": [
-          "**/*.spec.ts"
-        ],
-        "timeout": 180000
-      },
-      {
-        "outputDir": "C:/Users/ZENO/Documents/Playwright exam/test-results",
-        "repeatEach": 1,
-        "retries": 0,
-        "metadata": {},
-        "id": "Tablet",
-        "name": "Tablet",
-        "testDir": "C:/Users/ZENO/Documents/Playwright exam/shopee",
-        "testIgnore": [],
-        "testMatch": [
-          "**/*.spec.ts"
-        ],
-        "timeout": 180000
+        "timeout": 30000
       }
     ],
     "shard": null,
     "updateSnapshots": "missing",
     "updateSourceMethod": "patch",
-    "version": "1.50.0",
-    "workers": 1,
+    "version": "1.50.1",
+    "workers": 8,
     "webServer": null
   },
   "suites": [
     {
-      "title": "tests\\demo-shopee.spec.ts",
-      "file": "tests/demo-shopee.spec.ts",
+      "title": "demo-lotteryplus.spec.ts",
+      "file": "demo-lotteryplus.spec.ts",
       "column": 0,
       "line": 0,
-      "specs": [
+      "specs": [],
+      "suites": [
         {
-          "title": "has title",
-          "ok": true,
-          "tags": [],
-          "tests": [
+          "title": "Top-up NokCash",
+          "file": "demo-lotteryplus.spec.ts",
+          "line": 4,
+          "column": 6,
+          "specs": [
             {
-              "timeout": 120000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "Chrome",
-              "projectName": "Chrome",
-              "results": [
+              "title": "Unable to top-up NokCash when not log in lotteyplus.com",
+              "ok": true,
+              "tags": [],
+              "tests": [
                 {
-                  "workerIndex": 0,
-                  "status": "passed",
-                  "duration": 10747,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2025-01-30T08:24:40.946Z",
-                  "attachments": [
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chrome",
+                  "projectName": "Chrome",
+                  "results": [
                     {
-                      "name": "trace",
-                      "contentType": "application/zip",
-                      "path": "C:\\Users\\ZENO\\Documents\\Playwright exam\\test-results\\tests-demo-shopee-has-title-Chrome\\trace.zip"
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 2107,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-02-19T05:40:37.167Z",
+                      "attachments": []
                     }
-                  ]
+                  ],
+                  "status": "expected"
                 }
               ],
-              "status": "expected"
+              "id": "ccc6ebf235572f1d6163-ae6a66b600109a43c9cb",
+              "file": "demo-lotteryplus.spec.ts",
+              "line": 5,
+              "column": 7
             }
-          ],
-          "id": "dfbf6e83bdfaea8e4bef-57f482458cdd65981a12",
-          "file": "tests/demo-shopee.spec.ts",
-          "line": 4,
-          "column": 5
+          ]
         }
       ]
     }
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-01-30T08:24:39.957Z",
-    "duration": 12711.608,
+    "startTime": "2025-02-19T05:40:36.649Z",
+    "duration": 3025.513,
     "expected": 1,
     "skipped": 0,
     "unexpected": 0,

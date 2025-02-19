@@ -23,16 +23,24 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+  reporter: [
+    ['json', { outputFile: 'test-results/summary.json' }],
+    ['list'],
+    ['junit', { outputFile: 'test-results/lotterplus-results.xml' }],
+    ['html', { open: process.env.CI ? 'never' : 'on-failure' }],
+  ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry',
+    trace: 'retain-on-failure',
+    screenshot: 'only-on-failure',
     bypassCSP: true,
+    
   },
+  
 
   /* Configure projects for major browsers */
   projects: [
@@ -44,8 +52,12 @@ export default defineConfig({
           width: process.env.VIEWPORT_WIDTH ? parseInt(process.env.VIEWPORT_WIDTH) : 1440,
           height: process.env.VIEWPORT_HEIGHT ? parseInt(process.env.VIEWPORT_HEIGHT) : 849,
         },
+        userAgent:
+          'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/15.4 Mobile/14E304 Safari/602.1',
       },
     },
+
+    
 
     /* Test against mobile viewports. */
     // {
